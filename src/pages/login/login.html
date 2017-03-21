@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-item id="title">
+		<h1> <ion-icon name="home"></ion-icon>Bill </h1>
+	</ion-item>
+	<form>
+		<ion-item>
+			<ion-label stacked>Email</ion-label>
+			<ion-input type="text" [(ngModel)]="userData.email" name="email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label stacked>Password</ion-label>
+			<ion-input type="password" [(ngModel)]="userData.password" name="password"></ion-input>
+		</ion-item>
+		<br>
+		<div id="buttons-area" (click)="login()">
+			<button ion-button round center>Login</button>
+			<p> Or </p>
+			<button ion-button round center (click)="signInWithFacebook()">Sign in with Facebook</button>
+		</div>
+	</form>
+</ion-content>

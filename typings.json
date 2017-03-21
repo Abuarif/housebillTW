@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "firebase": "registry:npm/firebase#3.0.5+20160723033700"
+  },
+  "globalDependencies": {
+    "localforage": "registry:dt/localforage#0.0.0+20161130215418"
+  }
+}

@@ -1,0 +1,35 @@
+<!--
+  Generated template for the Equity page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Housemate Equities</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+<ion-list>
+  <button ion-item *ngFor="let user of users | async" (click)="editUser(user.$key, user.name, user.percentage)">
+	<ion-grid>
+	  <ion-row>
+	    <p><ion-col width-50>{{ user.name }}</ion-col><ion-col width-50>{{ user.percentage }}</ion-col></p>
+	  </ion-row>
+	</ion-grid>
+  </button>  
+</ion-list>
+
+<ion-fab left bottom>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab (click)="addUser()"><ion-icon name="person-add"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>

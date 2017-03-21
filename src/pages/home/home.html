@@ -1,0 +1,29 @@
+<ion-header>
+   <ion-toolbar>
+    <ion-title>Bills</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+	  <ion-item *ngFor="let bill of bills | async" (click)="showEquity(bill.$key, bill.amount)">
+	    <h2>{{bill.title}}</h2>
+	    <h3>{{bill.timestamp}}</h3>
+	    <p>{{bill.amount}}</p>
+	  </ion-item>
+  </ion-list>
+  <ion-fab left bottom>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="addBill()"><ion-icon name="paper"></ion-icon></button>
+      <button ion-fab (click)="equity()"><ion-icon name="people"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>
